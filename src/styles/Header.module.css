@@ -1,0 +1,128 @@
+.header {
+  padding: 1rem;
+  border-bottom: 2px solid var(--Cyan-Dark-Theme-secondary, #2C6E8F);
+  background: var(--Blue-Dark-Primary-Background, #002241);
+  height: 83px;
+  width: 100%;
+}
+
+.headerTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Needed for wrapping nav on mobile */
+}
+
+.logo img {
+  width: 193px;
+  height: 49px;
+  aspect-ratio: 193/49;
+}
+
+.langBtn {
+  margin-left: auto;
+  margin-right: 1rem;
+  text-decoration: none;
+  color: var(--Dark-Primary-Foreground, #FEFEFE);
+
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  margin-left: 0.5rem;
+}
+
+.burgerBtn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.navLinks {
+  display: none;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.navLinks a {
+  text-decoration: none;
+  color: var(--Dark-Primary-Foreground, #FEFEFE);
+  font-weight: 500;
+}
+
+.navLinks.open {
+  display: flex;
+}
+
+.searchWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  transition: width 0.3s ease;
+  width: auto;
+}
+
+.searchWrapper .searchInput {
+  width: 0;
+  opacity: 0;
+  transition: width 0.3s ease, opacity 0.3s ease;
+  padding: 0.4rem;
+  margin-right: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  background: var(--Dark-Primary-Foreground, #FEFEFE);
+}
+
+.searchWrapper.expanded .searchInput {
+  width: 160px;
+  opacity: 1;
+}
+
+.iconBtn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+/*-------------------------HOVER EFFECTS------------------------- */
+
+/*-------------------------MEDIA QUERIES------------------------- */
+
+/* Desktop layout */
+@media (min-width: 768px) {
+  .headerTop {
+    flex-wrap: nowrap;
+  }
+
+  .navLinks {
+    display: flex !important;
+    flex-direction: row;
+    gap: 2rem;
+    width: auto;
+    margin: 0 auto 0 2rem; /* spacing after logo */
+  }
+
+  .navLinks.open {
+    display: flex;
+  }
+
+  .langBtn {
+    margin: 0 1rem;
+  }
+
+  .burgerBtn {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .searchWrapper .searchInput {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,65 @@
+footer {
+  background: var(--Blue-Dark-Primary-Background, #002241);
+  color: var(--Dark-Primary-Foreground, #FEFEFE);
+  padding: 3rem 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+}
+
+footer h4 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: var(--Dark-Primary-Foreground, #FEFEFE);
+}
+
+footer p {
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+footer div {
+  max-width: 300px;
+}
+
+footer input,
+footer button {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border: none;
+  font-size: 0.9rem;
+}
+
+footer input {
+  background-color: var(--Dark-Primary-Foreground, #FEFEFE);
+  color: black;
+  border: 1px solid #555;
+}
+
+footer button {
+  background-color: var(--Blue-Primary-Interactive, #D4D4D4);;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/*-------------------------HOVER EFFECTS------------------------- */
+
+footer button:hover {
+  background: var(--blue-hovers-interactive-hover, #C2C2C2);
+}
+
+
+/*-------------------------MEDIA QUERIES------------------------- */
+
+@media (max-width: 600px) {
+  footer {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  footer div {
+    margin: 0 auto;
+  }
+}

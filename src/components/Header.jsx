@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import search from "../assets/icons/search.svg";
 import burgermenu from "../assets/icons/burgermenu.svg";
 import logo from "../assets/icons/logo.svg";
-import styles from "../styles/Header.module.scss";
+import styles from "../styles/Header.module.css";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
