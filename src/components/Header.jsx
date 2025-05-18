@@ -31,6 +31,8 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.headerTop}>
+      {/* LEFT GROUP: Logo and Nav */}
+      <div className={styles.leftGroup}>
         <Link to="/naturhistoriskmuseum/" className={styles.logo}>
           <img src={logo} alt="Museum Logo" />
         </Link>
@@ -41,18 +43,13 @@ export default function Header() {
           <Link to="*">Mol's Laboratory</Link>
           <Link to="*">About</Link>
         </nav>
+      </div>
 
+      {/* RIGHT GROUP: Language, Search, Burger */}
+      <div className={styles.rightGroup}>
         <Link to="*" className={styles.langBtn}>Dansk</Link>
 
         <div className={`${styles.searchWrapper} ${showSearch ? styles.expanded : ""}`}>
-          <input
-            type="text"
-            placeholder="Search..."
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            className={styles.searchInput}
-            autoComplete="off"
-          />
           <button
             type="button"
             onClick={() => setShowSearch(!showSearch)}
@@ -61,6 +58,14 @@ export default function Header() {
           >
             <img src={search} alt="Search Icon" className={styles.icon} />
           </button>
+          <input
+            type="text"
+            placeholder=""
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            className={styles.searchInput}
+            autoComplete="off"
+          />
         </div>
 
         <button
@@ -71,6 +76,7 @@ export default function Header() {
           <img src={burgermenu} alt="Burger Menu Icon" className={styles.icon} />
         </button>
       </div>
-    </header>
+    </div>
+  </header>
   );
 }

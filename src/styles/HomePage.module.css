@@ -1,27 +1,35 @@
+/*-------------------------RESET LIST STYLES-------------------------*/
 ul, li {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.container {
-  overflow-x: hidden; /* 🔒 Prevent horizontal scroll */
-  margin: 0;
-  padding: 0;
+/*-------------------------BASE PARAGRAPH STYLING-------------------------*/
+p {
+  font-size: 1.25rem;
 }
 
+/*-------------------------CONTAINER SETUP-------------------------*/
+.container {
+  width: 100%;
+  max-width: none; /* Or set a max-width like 1200px if desired */
+  margin: 0 auto;
+}
+
+/*-------------------------HERO SECTION-------------------------*/
 .hero {
   position: relative;
-  width: 100vw;        /* full viewport width */
-  height: 60vh;        /* responsive height */
-  overflow: hidden;
+  width: 100vw;        /* Full viewport width */
+  height: 60vh;        /* Responsive height relative to viewport */
+  overflow: hidden;    /* Hide overflow (for video edges) */
 }
 
 .heroVideo {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  display: block;      /* ensures no extra spacing from inline-block */
+  object-fit: cover;   /* Cover entire hero without distortion */
+  display: block;      /* Remove inline-block whitespace */
 }
 
 .overlay {
@@ -29,74 +37,64 @@ ul, li {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: auto;
   padding: 1rem 2rem;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent 80%);
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
+  z-index: 2;          /* Layer above video */
 }
 
 .title {
   color: var(--Dark-Primary-Foreground, #FEFEFE);
   font-size: 2.5rem;
-  background: rgba(10, 10, 10, 0.6);
+  background: rgba(10, 10, 10, 0.6); /* Semi-transparent dark bg */
   padding: 0.5rem 1rem;
-  border-radius: 8px;
 }
 
+/*-------------------------CARDS SECTION-------------------------*/
 .cardsSection {
   padding: 3rem 1rem;
   background-color: var(--Dark-Primary-Foreground, #FEFEFE);
-  list-style: none;
+  width: 100%;
 }
 
 .cardList {
-  list-style: none;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  padding: 0;
-  margin: 0 auto;
-  max-width: 1200px; /* optional: center and constrain width */
+  padding: 0 1rem;
 }
 
 .card {
   background: var(--Cyan-Dark-Theme-secondary, #2C6E8F);
   overflow: hidden;
-  width: 365px;
   transition: transform 0.3s ease;
-  list-style: none;
   margin: 0;
   padding: 0;
   cursor: pointer;
+  list-style: none;
 }
 
 .cardImage {
   width: 100%;
   height: 201px;
-  flex-shrink: 0;
-  aspect-ratio: 365/201;
+  aspect-ratio: 365 / 201;  /* Maintain image ratio */
   object-fit: cover;
+  flex-shrink: 0;
 }
 
 .cardContent {
   padding: 1rem;
   text-align: center;
-  position: relative; /* ✅ Needed for absolute positioning inside */
+  position: relative;        /* For any absolute children */
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.cardText {
-  font-size: 1.25rem;
-  color: var(--Dark-Primary-Foreground, #FEFEFE);
-}
-
-
+.cardText,
 .cardContent p {
-  margin: 0; /* smaller top margin or 0 for no gap */
+  margin: 0;
   font-size: 1.25rem;
   color: var(--Dark-Primary-Foreground, #FEFEFE);
 }
@@ -105,8 +103,9 @@ ul, li {
   background-color: var(--Dark-Primary-Foreground, #FEFEFE);
 }
 
+/*Icon Wrapper and Icons*/
 .iconWrapper {
-  position: relative; /* Wrapper for the icons */
+  position: relative;
   width: 24px;
   height: 24px;
 }
@@ -122,17 +121,17 @@ ul, li {
 
 .iconNormal {
   opacity: 1;
+  transition: opacity 0.3s ease;
 }
 
 .iconHover {
   opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-
-/*-------------------------HOVER EFFECTS------------------------- */
-
+/*-------------------------HOVER EFFECTS-------------------------*/
 .card:hover {
-  background-color:#8DC9E2;
+  background-color: #8DC9E2;
 }
 
 .sideNavCard:hover {
@@ -147,4 +146,51 @@ ul, li {
   opacity: 1;
 }
 
-/*-------------------------MEDIA QUERIES------------------------- */
+/*-------------------------MEDIA QUERIES-------------------------*/
+
+/* Tablets and up (min-width: 600px) */
+@media (min-width: 600px) {
+  .cardList {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 100%;
+  }
+  
+  .card {
+    aspect-ratio: 393 / 279;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cardImage {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .cardContent {
+    flex: 1;
+    padding: 1rem;
+  }
+
+  .cardText {
+    font-size: 1.25rem;
+  }
+
+  .iconWrapper {
+    width: 35px;
+    height: 35px;
+  }
+
+  .iconNext {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+/* Desktops and larger (min-width: 1024px) */
+@media (min-width: 1024px) {
+  .cardList {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 100%;
+  }
+}
