@@ -17,7 +17,7 @@ const router = createBrowserRouter([
       element: <HomePage />,
       },
       {
-      path: "naturesrituals",
+      path: "ritualsofnature",
       element: <SubPage />,
       },
       {

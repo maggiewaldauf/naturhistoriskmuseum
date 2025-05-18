@@ -14,12 +14,12 @@ export default function NewsletterForm() {
     <form onSubmit={handleSubmit}>
       <input
         type="email"
-        placeholder="enter your email"
+        placeholder="Enter your email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         required
       />
-      <button type="submit">subscribe</button>
+      <button type="submit">Subscribe</button>
     </form>
   );
 }
