@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
 import styles from '../styles/HomePage.module.css';
-import exhibitions from '../assets/images/exhibitions.png';
-import events from '../assets/images/events.png';
+import exhibitions from '../assets/images/exhibitions.jpg';
+import events from '../assets/images/events.jpg';
 import rituals from '../assets/images/ritualsofnature.png';
-import donations from '../assets/images/donations.png';
-import wolf from '../assets/images/wolf.png';
-import rewildingmols from '../assets/images/rewildingmols.png';
+import donations from '../assets/images/donations.jpg';
+import wolf from '../assets/images/wolf.jpg';
+import rewildingmols from '../assets/images/mols.jpg';
 import growingreen from '../assets/images/growingreen.png';
 import naturhistoriskvideo from '../assets/videos/naturhistoriskvideo.mp4';
 import next from '../assets/icons/next.svg';
