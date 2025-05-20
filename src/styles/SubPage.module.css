@@ -1,0 +1,156 @@
+/*------------------------- BASE STYLES -------------------------*/
+
+/* Main page layout: stacked column on mobile */
+.pageLayout {
+  display: flex;
+  flex-direction: column; /* Mobile: vertical stacking */
+}
+
+/* Sidebar and right column hidden by default (mobile-first) */
+.sidebar,
+.rightColumn {
+  display: none;
+}
+
+/*------------------------- CARD STYLES -------------------------*/
+
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.card {
+  background: var(--Blue-Primary-Background-secondary, #EAEAEA);
+  padding: 1.2rem;
+  width: 100%;
+  max-width: 500px;
+  transition: transform 0.2s ease;
+}
+
+.cardInner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Left section inside card, centered text */
+.left {
+  flex: 1;
+  text-align: center;
+}
+
+/* Date text styling */
+.date {
+  font-size: 1rem;
+  color: var(--Color, #277190);
+  font-weight: 500;
+}
+
+/* Vertical divider between left and right sections */
+.divider {
+  width: 1px;
+  height: 60px;
+  background-color: var(--Blue-Primary-Foreground, #0A0A0A);;
+  margin: 0 1rem;
+}
+
+/* Right section inside card */
+.right {
+  flex: 2;
+}
+
+.right h3 {
+  font-size: 1.25rem;
+  margin: 0 0 0.3rem;
+  color: var(--Blue-Primary-Foreground, #0A0A0A);
+}
+
+.right p {
+  font-size: 1rem;
+  color: #444;
+  margin: 0;
+}
+
+/*------------------------- VISIT SECTION -------------------------*/
+.visitSection {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.visitButton {
+  align-self: flex-start;
+  padding: 0.6rem 1.2rem;
+  background: var(--Cyan-Dark-Theme-secondary, #2C6E8F);
+  color: var(--blue-additional-foregrounds-theme-foreground, #FEFEFE);
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+/*------------------------- HOVER EFFECTS -------------------------*/
+
+/* Button hover background color */
+.visitButton:hover {
+  background-color: #8DC9E2;
+}
+
+/*------------------------- MEDIA QUERIES -------------------------*/
+
+@media (min-width: 1024px) {
+  /* Page layout changes to horizontal flex for desktop */
+  .pageLayout {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+
+  /* Sidebar shown */
+  .sidebar {
+    display: block;
+    width: 25%;
+    flex-shrink: 0;
+  }
+
+  /* Main content area */
+  .mainContent {
+    flex: 0 0 600px;
+    max-width: 50%;
+  }
+
+  /* Right column shown on desktop */
+  .rightColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 25%;
+    margin-left: auto; /* Push right column to the far right */
+  }
+
+  .sideNav {
+    flex-shrink: 0;
+  }
+
+  .advertisement,
+  .instaGallery,
+  .exhibitionAd {
+    width: 100%;
+  }
+
+
+  .instaGallery {
+    max-width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+
+  .exhibitionAd {
+    height: auto;
+  }
+}

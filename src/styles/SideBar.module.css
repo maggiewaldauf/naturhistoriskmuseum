@@ -1,0 +1,59 @@
+/*-------------------------SIDE BAR STYLING-------------------------*/
+/* Icon next to text in buttons/links */
+.icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+/* Sidebar container styling */
+.sidebar {
+  padding: 1rem;
+  background: var(--Blue-Primary-Background-secondary, #EAEAEA);
+}
+
+/* Buttons styled as links with icons */
+button {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: var(--Blue-Primary-Foreground);
+  padding: 4px 0;
+}
+
+/* Links styling */
+a {
+  color: var(--Blue-Primary-Foreground);
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+/* Sub-links */
+.subLink {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 4px 0;
+  padding-left: 12px; /* Indent for hierarchy */
+  font-size: 0.9rem;
+}
+
+/* Active state for links/buttons */
+.active {
+  font-weight: bold;
+  color: var(--highlight-color);
+}
+
+
+/*-------------------------HOVER EFFECTS-------------------------*/
+button:hover {
+  text-decoration: underline;
+}
+
+.subLink:hover {
+  text-decoration: underline;
+}
