@@ -1,9 +1,24 @@
 /*------------------------- BASE STYLES -------------------------*/
+p {
+  font-size: 1rem;
+}
+
+h1 {
+  color: var(--Color, #277190);
+  font-size: 1.75rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
 
 /* Main page layout: stacked column on mobile */
 .pageLayout {
   display: flex;
   flex-direction: column; /* Mobile: vertical stacking */
+  padding: 3rem 1rem;
 }
 
 /* Sidebar and right column hidden by default (mobile-first) */
@@ -70,7 +85,7 @@
 
 .right p {
   font-size: 1rem;
-  color: #444;
+  color: var(--Blue-Primary-Foreground, #0A0A0A);
   margin: 0;
 }
 
@@ -88,7 +103,7 @@
   background: var(--Cyan-Dark-Theme-secondary, #2C6E8F);
   color: var(--blue-additional-foregrounds-theme-foreground, #FEFEFE);
   border: none;
-  font-weight: 600;
+  font-weight: 400;
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
@@ -103,6 +118,14 @@
 /*------------------------- MEDIA QUERIES -------------------------*/
 
 @media (min-width: 1024px) {
+    p {
+    font-size: 1.25rem;
+  }
+
+    h1 {
+      font-size: 2.5rem;
+    }
+  
   /* Page layout changes to horizontal flex for desktop */
   .pageLayout {
     flex-direction: row;
@@ -122,6 +145,14 @@
   .mainContent {
     flex: 0 0 600px;
     max-width: 50%;
+  }
+
+  .introductionText {
+    font-size: 1.25rem;
+  }
+
+  .visitText {
+    font-size: 1.25rem;
   }
 
   /* Right column shown on desktop */

@@ -1,3 +1,8 @@
+/*------------------------- BASE STYLES -------------------------*/
+p {
+  font-size: 1.25rem;
+}
+
 /*-------------------------SIDE BAR STYLING-------------------------*/
 /* Icon next to text in buttons/links */
 .icon {
@@ -17,19 +22,12 @@
 button {
   background: none;
   border: none;
-  font-size: 1rem;
+  font-size: 1.25rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   color: var(--Blue-Primary-Foreground);
-  padding: 4px 0;
-}
-
-/* Links styling */
-a {
-  color: var(--Blue-Primary-Foreground);
-  text-decoration: none;
-  font-size: 1rem;
+  padding: 10px 0;
 }
 
 /* Sub-links */
@@ -39,7 +37,7 @@ a {
   gap: 6px;
   margin: 4px 0;
   padding-left: 12px; /* Indent for hierarchy */
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 /* Active state for links/buttons */

@@ -21,13 +21,13 @@ export default function SubPage() {
       <main className={styles.mainContent}>
         <h1>Rituals of Nature</h1>
         <img src={wolf} alt="Rituals Of Nature" className={styles.heroImage} />
-        <p><strong>Rituals in Nature invites</strong> visitors to explore the rhythms and behaviours of the natural world. 
+        <p className={styles.introductionText}><strong>Rituals in Nature invites</strong> visitors to explore the rhythms and behaviours of the natural world. 
           Through a layer of thoughtful digital stories, the exhibition highlights the connections and patterns 
           that make nature feel alive - sparking curiosity, reflection, and a deeper sense of belonging.</p>
-        <p>Each season brings a new digital theme, making every visit unique - and only available for a limited time. 
+        <p className={styles.introductionText}>Each season brings a new digital theme, making every visit unique - and only available for a limited time. 
           We explore pressing themes such as consent, politics, and sustainability - examining how these dynamics 
           are reflected, challenged, or mirrored in the natural world.</p>
-        <p>Visitors are encouraged to slow down, tune in, and rediscover their place within the greater natural symphony.</p>
+        <p className={styles.introductionText}>Visitors are encouraged to slow down, tune in, and rediscover their place within the greater natural symphony.</p>
 
         <h2>Themes</h2>
         <div className={styles.cardContainer}>
@@ -49,7 +49,7 @@ export default function SubPage() {
 
         <h2>Where to find?</h2>
         <div className={styles.visitSection}>
-          <p>
+          <p className={styles.visitText}>
             ‘Rituals of Nature’ is part of the ‘Global Backyard exhibition’ on 2nd floor.
             The Interactive Experience can be found on the main screen in the Cafeteria.
           </p>
