@@ -41,9 +41,9 @@ export default function HomePage() {
       </div>
 
       <section className={styles.cardsSection}>
-        <ul className={styles.cardList}>
+        <div className={styles.cardList}>
           {cardItems.map((card, index) => (
-            <li
+            <div
               key={index}
               className={`${styles.card} ${card.isSideNav ? styles.sideNavCard : ''}`}
             >
@@ -69,9 +69,9 @@ export default function HomePage() {
                   </div>
                 </>
               )}
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       </section>
     </div>
   );
