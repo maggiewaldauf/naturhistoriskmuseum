@@ -18,7 +18,7 @@ export default function Footer() {
                 </p>
                 <p>
                     Tlf.: 86 12 97 77<br />
-                    <a href="mailto:nm@nathist.dk">nm@nathist.dk</a>
+                    nm@nathist.dk
                 </p>
             </div>
             <div className={styles.openingHours}>
@@ -42,7 +42,7 @@ export default function Footer() {
                 </p>
                 <p>
                     Tlf.: 86 36 25 35 eller 86 12 97 77<br />
-                    <a href="mailto:molslab@molslab.dk">molslab@molslab.dk</a>
+                    molslab@molslab.dk
                 </p>
             </div>
             <div className={styles.soMe}>
