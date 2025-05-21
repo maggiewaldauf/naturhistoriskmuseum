@@ -1,19 +1,12 @@
-/*-------------------------RESET LIST STYLES-------------------------*/
-ul, li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
 /*-------------------------BASE PARAGRAPH STYLING-------------------------*/
 p {
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 
 /*-------------------------CONTAINER SETUP-------------------------*/
 .container {
   width: 100%;
-  max-width: none; /* Or set a max-width like 1200px if desired */
+  max-width: none;
   margin: 0 auto;
 }
 
@@ -21,13 +14,13 @@ p {
 .hero {
   position: relative;
   width: 100vw;        /* Full viewport width */
-  height: 60vh;        /* Responsive height relative to viewport */
+  height: 35vh;        /* Responsive height relative to viewport */
   overflow: hidden;    /* Hide overflow (for video edges) */
 }
 
 .heroVideo {
   width: 100%;
-  height: 100%;
+  height: 35vh;
   object-fit: cover;   /* Cover entire hero without distortion */
   display: block;      /* Remove inline-block whitespace */
 }
@@ -46,10 +39,31 @@ p {
 
 .title {
   color: var(--Dark-Primary-Foreground, #FEFEFE);
-  font-size: 2.5rem;
+  font-size: 1.75rem;
   background: rgba(10, 10, 10, 0.6); /* Semi-transparent dark bg */
   padding: 0.5rem 1rem;
+  text-transform: uppercase;
 }
+
+.ctaButton {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  color: var(--blue-additional-foregrounds-theme-foreground, #FEFEFE);
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+
+.ctaIcon {
+  width: 20px;
+  height: 20px;
+  margin-left: 8px;
+}
+
 
 /*-------------------------CARDS SECTION-------------------------*/
 .cardsSection {
@@ -146,17 +160,38 @@ p {
   opacity: 1;
 }
 
+.ctaButton:hover {
+  text-decoration: underline;
+}
+
 /*-------------------------MEDIA QUERIES-------------------------*/
 
 /* Tablets and up (min-width: 600px) */
 @media (min-width: 600px) {
-  .cardList {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 100%;
+  p {
+    font-size: 1.25rem;
   }
   
+  .hero {
+    height: 60vh;
+  }
+
+  .heroVideo {
+    height: 100%;
+  }
+
+  .title {
+    font-size: 2.5rem;
+    font-weight: 400;
+  }
+
+  .ctaButton {
+    font-size: 1.25rem;
+  }
+
+  
   .card {
-    aspect-ratio: 393 / 279;
+    aspect-ratio: 393 / 300;
     display: flex;
     flex-direction: column;
   }

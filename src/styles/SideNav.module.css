@@ -1,3 +1,8 @@
+/*-------------------------BASE PARAGRAPH STYLING-------------------------*/
+p {
+  font-size: 1rem;
+}
+
 /*-------------------------SIDE NAVIGATION CONTAINER-------------------------*/
 .sideNav {
   display: flex;
@@ -19,7 +24,6 @@
 
 /* Navigation Item Text */
 .navItem span {
-  font-size: 1.25rem;
   color: var(--Dark-Primary-Foreground, #FEFEFE);
   text-transform: uppercase;
 }
@@ -44,7 +48,7 @@
   }
 
   .navItem span {
-    font-size: 1.25rem; /* Consistent font size */
+    font-size: 1.5rem; /* Consistent font size */
   }
 
 }
@@ -61,7 +65,7 @@
   }
 
 
-  .navItem span {
+  p {
     font-size: 1.5rem; /* Increase font size on desktop */
   }
 

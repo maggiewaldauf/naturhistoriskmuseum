@@ -1,33 +1,35 @@
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import styles from '../styles/Sidebar.module.css';
 import expandIcon from '../assets/icons/expand.svg';
 
 export default function Sidebar() {
   const location = useLocation();
+  const navigate = useNavigate();
 
   const isActiveSection = (pathPrefix) => location.pathname.startsWith(pathPrefix);
 
   const [openSections, setOpenSections] = useState({
-  about: false,
-  visit: false,
-  mols: false,
-  learning: false,
-  collections: false,
-  support: false,
-  exhibitions: false, // <-- Add this
-});
+    about: false,
+    visit: false,
+    mols: false,
+    learning: false,
+    collections: false,
+    support: false,
+    exhibitions: false,
+  });
 
-  useEffect(() => {
+ useEffect(() => {
   setOpenSections((prev) => ({
     ...prev,
     about: isActiveSection('/about'),
     visit: isActiveSection('/visit'),
     mols: isActiveSection('/mols'),
     learning: isActiveSection('/learning'),
-    collections: isActiveSection('/collections') || isActiveSection('/wolf') || isActiveSection('/naturlex') || isActiveSection('/research'),
+    collections: isActiveSection('/collections'),
     support: isActiveSection('/support'),
-    exhibitions: isActiveSection('/exhibitions'), // <-- Add this
+    events: isActiveSection('/events'),
+    exhibitions: ['/exhibitions', '/ritualsofnature'].some(isActiveSection),
   }));
 }, [location.pathname]);
 
@@ -36,94 +38,127 @@ export default function Sidebar() {
   };
 
   const renderLink = (to, label) => (
-  <div className={`${styles.subLink} ${location.pathname === to ? styles.active : ''}`}>
-    <img src={expandIcon} alt="Expand" className={styles.icon} />
-    <Link to={to}>{label}</Link>
-  </div>
-);
+    <button
+      className={`${styles.subLink} ${location.pathname === to ? styles.active : ''}`}
+      onClick={() => navigate(to)}
+    >
+      <img src={expandIcon} alt="Expand" className={styles.icon} />
+      {label}
+    </button>
+  );
 
   return (
     <nav className={styles.sidebar} role="navigation">
       <div className={styles.navList}>
 
-        <div className={styles.mainLink}>
+        <button
+          className={`${styles.mainLink} ${location.pathname === '/naturhistoriskmuseum/' ? styles.active : ''}`}
+          onClick={() => navigate('/naturhistoriskmuseum/')}
+        >
           <img src={expandIcon} alt="Expand" className={styles.icon} />
-          <Link to="/naturhistoriskmuseum/">Home</Link>
-        </div>
+          Home
+        </button>
 
         <div>
-          <button onClick={() => toggleSection('about')} role="button">
+          <button
+            className={styles.mainLink}
+            onClick={() => toggleSection('about')}
+          >
             <img src={expandIcon} alt="Expand" className={styles.icon} />
             About the Museum
           </button>
           {openSections.about && (
             <div>
-              {renderLink('/about/who-are-we', 'Who Are We?')}
+              {renderLink('/about/who-are-we', 'Who Are We')}
               {renderLink('/about/new-museum', 'New Museum')}
-              {renderLink('/about/organisation', "Museum's Organisation")}
+              {renderLink('/about/museum-organisation', 'Museums Organization')}
               {renderLink('/about/press', 'Press')}
             </div>
           )}
         </div>
 
         <div>
-          <button onClick={() => toggleSection('visit')} role="button">
+          <button
+            className={styles.mainLink}
+            onClick={() => toggleSection('visit')}
+          >
             <img src={expandIcon} alt="Expand" className={styles.icon} />
             Plan Your Visit
           </button>
           {openSections.visit && (
             <div>
-              {renderLink('/visit/find-your-way', 'Find Your Way')}
               {renderLink('/visit/opening-hours', 'Opening Hours & Admissions')}
-              {renderLink('/visit/cafe', 'Our Cafe')}
-              {renderLink('/visit/shop', 'Shop and Webshop')}
+              {renderLink('/visit/find-your-way', 'Find Your Way')}
+              {renderLink('/visit/cafe', 'Our Café')}
+              {renderLink('/visit/webshop', 'Shop and Webshop')}
             </div>
           )}
         </div>
 
         <div>
-          <button onClick={() => toggleSection('exhibitions')} role="button">
+          <button
+            className={styles.mainLink}
+            onClick={() => toggleSection('exhibitions')}
+          >
             <img src={expandIcon} alt="Expand" className={styles.icon} />
             Exhibitions
           </button>
           {openSections.exhibitions && (
             <div>
-              {renderLink('/exhibitions', 'Beetles')}
-              {renderLink('/exhibitions/global-backyard', 'Future Man')}
-              {renderLink('/exhibitions/savanna', 'The Global Backyard')}
-              {renderLink('/exhibitions/savanna', 'Our Nature')}
-              {renderLink('/exhibitions/beetles', 'Expedition til Africa')}
-              {renderLink('/exhibitions/beetles', '99 arter')}
+              {renderLink('/exhibitions/beetles', 'Beetles')}
+              {renderLink('/exhibitions/future-man', 'Future Man')}
+              {renderLink('/exhibitions/global-backyard', 'The Global Backyard')}
+              {renderLink('/exhibitions/our-nature', 'Our Nature')}
+              {renderLink('/exhibitions/expedition-til-africa', 'Expedition til Africa')}
+              {renderLink('/exhibitions/99arter', '99 Arter')}
+              {renderLink('/exhibitions/ritualsofnature', 'Rituals Of Nature')}
             </div>
           )}
         </div>
 
-        <div className={styles.mainLink}>
-          <img src={expandIcon} alt="Expand" className={styles.icon} />
-          <Link to="/events">Events</Link>
+        <div>
+          <button
+            className={styles.mainLink}
+            onClick={() => toggleSection('events')}
+          >
+            <img src={expandIcon} alt="Expand" className={styles.icon} />
+            Events
+          </button>
+          {openSections.events && (
+            <div>
+              {renderLink('/events/upcoming', 'Upcoming Events')}
+              {renderLink('/events/past', 'Past Events')}
+            </div>
+          )}
         </div>
 
         <div>
-          <button onClick={() => toggleSection('mols')} role="button">
+          <button
+            className={styles.mainLink}
+            onClick={() => toggleSection('mols')}
+          >
             <img src={expandIcon} alt="Expand" className={styles.icon} />
             Explore Mols Lab
           </button>
           {openSections.mols && (
             <div>
-              {renderLink('/mols/about', 'About Mols Lab')}
-              {renderLink('/mols/events', 'Celebrate Your Event')}
+              {renderLink('/mols/aboutmols', 'About Mols Lab')}
+              {renderLink('/mols/celebrateevent', 'Celebrate Your Event')}
               {renderLink('/mols/stay', 'Stay in Mols Laboratory')}
               {renderLink('/mols/rewilding', 'Rewilding Mols')}
-              {renderLink('/mols/horses', 'Experience the Wild Horses')}
+              {renderLink('/mols/wildhorses', 'Experience the Wild Horses')}
               {renderLink('/mols/visit', 'Visit Mols Lab')}
-              {renderLink('/mols/area', 'The Area of Mols Lab')}
-              {renderLink('/mols/green-branch', 'The Green Branch')}
+              {renderLink('/mols/wildhorses', 'The Area of Mols Lab')}
+              {renderLink('/mols/visit', 'The Green Branch')}
             </div>
           )}
         </div>
 
         <div>
-          <button onClick={() => toggleSection('learning')} role="button">
+          <button
+            className={styles.mainLink}
+            onClick={() => toggleSection('learning')}
+          >
             <img src={expandIcon} alt="Expand" className={styles.icon} />
             Learning & Schools
           </button>
@@ -135,22 +170,28 @@ export default function Sidebar() {
         </div>
 
         <div>
-          <button onClick={() => toggleSection('collections')} role="button">
+          <button
+            className={styles.mainLink}
+            onClick={() => toggleSection('collections')}
+          >
             <img src={expandIcon} alt="Expand" className={styles.icon} />
             Collections & Knowledge
           </button>
           {openSections.collections && (
             <div>
-              {renderLink('/collections', 'Collections')}
-              {renderLink('/wolf-in-denmark', 'Wolf in Denmark')}
-              {renderLink('/naturlex', 'Naturlex')}
+              {renderLink('/collections/overview', 'Collections')}
+              {renderLink('/wolf', 'Wolf in Denmark')}
+              {renderLink('/naturlex', 'NaturLex')}
               {renderLink('/research', 'Research')}
             </div>
           )}
         </div>
 
         <div>
-          <button onClick={() => toggleSection('support')} role="button">
+          <button
+            className={styles.mainLink}
+            onClick={() => toggleSection('support')}
+          >
             <img src={expandIcon} alt="Expand" className={styles.icon} />
             Support Us
           </button>
@@ -160,6 +201,8 @@ export default function Sidebar() {
             </div>
           )}
         </div>
+
+        
 
       </div>
     </nav>

@@ -1,3 +1,9 @@
+/*------------------------- BASE STYLES -------------------------*/
+p {
+  font-size: 0.8rem;
+}
+
+
 /*-------------------------IMAGE GALLERY STYLING------------------------*/
 .galleryContainer {
   position: relative;
@@ -37,12 +43,12 @@
 
 /* Position left arrow */
 .arrow:first-of-type {
-  left: -20.5px; /* Adjust depending on icon size */
+  left: -21.5px; /* Adjust depending on icon size */
 }
 
 /* Position right arrow */
 .arrow:last-of-type {
-  right: -20.5px;
+  right: -21.5px;
 }
 
 /* Wrapper around each image for positioning overlay */
