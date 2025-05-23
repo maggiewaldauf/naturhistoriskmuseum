@@ -16,7 +16,8 @@ export default function Sidebar() {
     learning: false,
     collections: false,
     support: false,
-    exhibitions: false,
+    events: false,
+    exhibitions: true, // Always open
   });
 
  useEffect(() => {
@@ -29,7 +30,7 @@ export default function Sidebar() {
     collections: isActiveSection('/collections'),
     support: isActiveSection('/support'),
     events: isActiveSection('/events'),
-    exhibitions: ['/exhibitions', '/ritualsofnature'].some(isActiveSection),
+    // exhibitions is always true, no need to update it
   }));
 }, [location.pathname]);
 
@@ -111,7 +112,7 @@ export default function Sidebar() {
               {renderLink('/exhibitions/our-nature', 'Our Nature')}
               {renderLink('/exhibitions/expedition-til-africa', 'Expedition til Africa')}
               {renderLink('/exhibitions/99arter', '99 Arter')}
-              {renderLink('/exhibitions/ritualsofnature', 'Rituals Of Nature')}
+              {renderLink('/naturhistoriskmuseum/ritualsofnature', 'Rituals Of Nature')}
             </div>
           )}
         </div>

@@ -43,7 +43,7 @@ button {
 /* Active state for links/buttons */
 .active {
   font-weight: bold;
-  color: var(--highlight-color);
+  color: var(--Cyan-Dark-Theme-secondary, #2C6E8F);
 }
 
 

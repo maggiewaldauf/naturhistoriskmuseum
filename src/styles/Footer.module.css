@@ -2,8 +2,11 @@
 footer {
   background: var(--Blue-Dark-Primary-Background, #002241);
   color: var(--Dark-Primary-Foreground, var(--Blue-Dark-Primary-Foreground, #FEFEFE));
-  font-size: 1rem;
   padding: 3rem 1rem;
+}
+
+footer p {
+    font-size: 1rem;
 }
 
 /* Typography */
@@ -42,19 +45,21 @@ footer button {
 
 footer input {
   background-color: var(--Dark-Primary-Foreground, #FEFEFE);
-  color: black;
+  color: var(--Blue-Primary-Foreground, #0A0A0A);;
   border: 1px solid #555;
+  font-size: 1rem;
 }
 
 footer button {
   background-color: var(--Blue-Primary-Interactive, #D4D4D4);
-  color: black;
+  color: var(--Blue-Primary-Foreground, #0A0A0A);;
   cursor: pointer;
   transition: background-color 0.3s ease;
   width: fit-content;
   margin-left: auto;
   margin-top: 1rem;
   padding: 0.5rem 1.5rem;
+  font-size: 1rem;
 }
 
 /*-------------------------SOCIAL ICONS-------------------------*/
@@ -135,7 +140,6 @@ footer a:hover {
   }
 
   footer {
-    font-size: 1.25rem;
     padding: 4rem 2rem;
   }
 
@@ -149,6 +153,11 @@ footer a:hover {
 
   footer button {
     width: auto; /* Button shrinks to content width on larger screens */
+    font-size: 1rem;
+  }
+
+  footer input {
+    font-size: 1rem;
   }
 }
 
