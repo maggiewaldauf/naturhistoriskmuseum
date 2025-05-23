@@ -148,7 +148,6 @@
 /* Desktops (≥1024px): larger font, fixed layout, hide burger */
 @media (min-width: 1024px) {
   .header {
-    font-size: 1.25rem;
     min-height: 87px;
     padding: 2rem;
   }

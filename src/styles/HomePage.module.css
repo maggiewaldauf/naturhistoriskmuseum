@@ -50,6 +50,7 @@ p {
   bottom: 20px;
   right: 20px;
   color: var(--blue-additional-foregrounds-theme-foreground, #FEFEFE);
+
   padding: 12px 18px;
   display: flex;
   align-items: center;
