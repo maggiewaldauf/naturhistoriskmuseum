@@ -97,6 +97,12 @@
   z-index: 10;
 }
 
+.searchInput::placeholder {
+  color: var(--Dark-Primary-Foreground, #FEFEFE);
+  font-style: italic;
+  font-size: 1rem;
+  opacity: 0.8;
+}
 /* Search input visible state on mobile */
 .searchWrapper.expanded .searchInput {
   width: 160px;

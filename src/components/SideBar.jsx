@@ -17,7 +17,7 @@ export default function Sidebar() {
     collections: false,
     support: false,
     events: false,
-    exhibitions: true, // Always open
+    exhibitions: true, // Always open -> would need to be changed if on real website
   });
 
  useEffect(() => {

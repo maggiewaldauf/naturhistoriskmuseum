@@ -1,5 +1,5 @@
 import styles from '../styles/SubPage.module.css';
-import wolf from '../assets/images/wolf.jpg';
+import screen from '../assets/images/screen.png';
 import beetlesad from '../assets/images/beetlesad.png';
 import SideBar from '../components/SideBar';
 import SideNav from '../components/SideNav';
@@ -20,7 +20,7 @@ export default function SubPage() {
 
       <main className={styles.mainContent}>
         <h1>Rituals of Nature</h1>
-        <img src={wolf} alt="Rituals Of Nature" className={styles.heroImage} />
+        <img src={screen} alt="Rituals Of Nature" className={styles.heroImage} />
         <p className={styles.introductionText}><strong>Rituals in Nature invites</strong> visitors to explore the rhythms and behaviours of the natural world. 
           Through a layer of thoughtful digital stories, the exhibition highlights the connections and patterns 
           that make nature feel alive - sparking curiosity, reflection, and a deeper sense of belonging.</p>
