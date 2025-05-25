@@ -60,7 +60,7 @@ export default function Header() {
           </button>
           <input
             type="text"
-            placeholder=""
+            placeholder="Search..."
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             className={styles.searchInput}

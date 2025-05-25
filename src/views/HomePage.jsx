@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import styles from '../styles/HomePage.module.css';
 import exhibitions from '../assets/images/exhibitions.jpg';
 import events from '../assets/images/events.jpg';
-import rituals from '../assets/images/ritualsofnature.png';
+import screen from '../assets/images/screen.png';
 import donations from '../assets/images/donations.jpg';
 import wolf from '../assets/images/wolf.jpg';
 import rewildingmols from '../assets/images/mols.jpg';
@@ -18,7 +18,7 @@ export default function HomePage() {
   const cardList = [
     { name: 'Exhibitions', image: exhibitions, link: '*' },
     { name: 'Events', image: events, link: '*' },
-    { name: 'NEW - Rituals of Nature', image: rituals, link: 'ritualsofnature' },
+    { name: 'NEW - Rituals of Nature', image: screen, link: 'ritualsofnature' },
     { name: 'Donations', image: donations, link: '*' },
     { name: 'Wolf in Denmark', image: wolf, link: '*' },
     { name: 'Rewilding Mols', image: rewildingmols, link: '*' },
